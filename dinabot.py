@@ -4,13 +4,13 @@ import numpy
 import pyautogui
 
 while True:
-    x, y = pyautogui.position()
+    x, y = pyautogui.position() #to get the position of mouse
     print(f"{x},{y}")
 
     # Get raw pixels from the screen, save it to a Numpy array
-    img = numpy.array(mss.mss().grab({"top": 260, "left": 503, "width": 80, "height": 35}))
+    img = numpy.array(mss.mss().grab({"top": 260, "left": 503, "width": 80, "height": 35})) 
     # img = numpy.array(mss.mss().grab({"top": y, "left": x, "width": 80, "height": 35}))
-
+    # sum of the white pixcle
     if img.sum() != 2856000:
         pyautogui.press("space")
         time.sleep(.009)
